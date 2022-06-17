@@ -54,6 +54,10 @@ class ComposerStaticInitdd387a8b8e2d7bcfe3357ef4b85e449f
         array (
             'Monolog\\' => 8,
         ),
+        'C' => 
+        array (
+            'Cowsayphp\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -148,6 +152,10 @@ class ComposerStaticInitdd387a8b8e2d7bcfe3357ef4b85e449f
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Cowsayphp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alrik11es/cowsayphp/src',
         ),
     );
 

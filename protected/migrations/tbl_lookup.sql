@@ -5,4 +5,4 @@ CREATE TABLE `tbl_lookup` (
   `type` tinyint(1) NOT NULL,
   `position` int(10) NOT NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

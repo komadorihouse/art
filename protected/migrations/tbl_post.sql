@@ -4,4 +4,4 @@ CREATE TABLE `tbl_post` (
   `content` varchar(200) NOT NULL,
   `tags` varchar(10) NOT NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

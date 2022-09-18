@@ -6,4 +6,4 @@ CREATE TABLE `tbl_user` (
   `email` varchar(128) NOT NULL,
   `profile` varchar(200) NOT NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

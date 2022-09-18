@@ -3,4 +3,4 @@ CREATE TABLE `tbl_tag` (
   `name` varchar(10) NOT NULL,
   `frequency` int(10) NOT NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

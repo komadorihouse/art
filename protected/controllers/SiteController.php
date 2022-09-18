@@ -30,12 +30,8 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
-		$user = users::model()->find(array(
-			'condition' => "id = 2 "
-		));
 
-
-		$this->render('index',array('user' => $user));
+		$this->render('index',array());
 	}
 
 	/**
@@ -91,14 +87,17 @@ class SiteController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
+		
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
-			$model->attributes=$_POST['LoginForm'];
+			$model->username = $_POST['LoginForm']['username'];
+			$model->password = $_POST['LoginForm']['password'];
+			$model->rememberMe = $_POST['LoginForm']['rememberMe'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->login()){	
 				$this->redirect(Yii::app()->user->returnUrl);
+			}
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

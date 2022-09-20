@@ -29,11 +29,11 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'ホーム', 'url'=>array('/site/index')),
+				array('label'=>'概要', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'お問合せ', 'url'=>array('/site/contact')),
+				array('label'=>'ログイン', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'ログアウト ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
@@ -48,7 +48,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> KomadoriHouse.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

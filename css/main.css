@@ -227,3 +227,35 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+
+/* 以下から作成 */
+.button{
+	border-radius: 10px;
+	cursor: pointer;
+}
+.login{
+	border-radius: 10px;
+    background-color: #298dcd;
+	border: none;
+    color: white;
+    cursor: pointer;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+.login:hover{
+	background-color: #8dc3e5;
+}
+.signin{
+	border-radius: 10px;
+    background-color: #757575;
+    color: white;
+    cursor: pointer;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+.signin:hover{
+	background-color: #9c9c9c;
+}

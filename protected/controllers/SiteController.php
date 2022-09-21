@@ -103,6 +103,10 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
+	public function actionSigningUp(){
+		echo '新規登録';
+	}
+
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

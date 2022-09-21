@@ -1774,3 +1774,14 @@ REQUEST_URI=/index.php?r=site/login
 in /Users/volksware_developer05/Documents/GitHub/art/protected/components/UserIdentity.php (10)
 in /Users/volksware_developer05/Documents/GitHub/art/protected/models/LoginForm.php (52)
 in /Users/volksware_developer05/Documents/GitHub/art/protected/controllers/SiteController.php (98)
+2022/09/21 05:51:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signin".' in /Users/volksware_developer05/Documents/GitHub/art/framework/web/CController.php:483
+Stack trace:
+#0 /Users/volksware_developer05/Documents/GitHub/art/framework/web/CController.php(270): CController->missingAction('signin')
+#1 /Users/volksware_developer05/Documents/GitHub/art/framework/web/CWebApplication.php(282): CController->run('signin')
+#2 /Users/volksware_developer05/Documents/GitHub/art/framework/web/CWebApplication.php(141): CWebApplication->runController('site/signin')
+#3 /Users/volksware_developer05/Documents/GitHub/art/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/volksware_developer05/Documents/GitHub/art/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/signin
+HTTP_REFERER=http://blogapp.local/index.php?r=site/login
+---

@@ -46,7 +46,10 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+		<button class='button span-2 login' type="submit">ログイン</button>
+		<a href='/index.php?r=site/signingUp'>
+			<div class='button span-4 signin'>アカウントを作成</div>
+		</a>
 	</div>
 
 <?php $this->endWidget(); ?>

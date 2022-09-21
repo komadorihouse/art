@@ -48,7 +48,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> KomadoriHouse.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> DaiskeNoma.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

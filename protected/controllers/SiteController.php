@@ -91,7 +91,7 @@ class SiteController extends Controller
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
-			$model->username = $_POST['LoginForm']['username'];
+			$model->email = $_POST['LoginForm']['email'];
 			$model->password = $_POST['LoginForm']['password'];
 			$model->rememberMe = $_POST['LoginForm']['rememberMe'];
 			// validate user input and redirect to the previous page if valid

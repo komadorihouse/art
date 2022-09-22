@@ -104,7 +104,16 @@ class SiteController extends Controller
 	}
 
 	public function actionSigningUp(){
-		echo '新規登録';
+
+		//使いたいフォームを呼び出して変数へ代入
+		$modelForm = new SignUpForm();
+
+		if(isset($_POST['SignUpForm'])){
+			
+		}
+
+		//$this->renderはviewをよびだす。('viewファイル名',array('view内で使用する変数名' => $コントローラーから持っていく変数,))
+		$this->render('signup',array('model' => $modelForm,));
 	}
 
 	/**

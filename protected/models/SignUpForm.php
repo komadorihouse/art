@@ -20,8 +20,7 @@ class SignUpForm extends CFormModel
 			array('username, password, email', 'required'),
 			// boolean = 真偽値のみ許可
 			array('rememberMe', 'boolean'),
-			// password needs to be authenticated
-			array('password', 'authenticate'),
+			
 		);
 	}
 
@@ -44,34 +43,19 @@ class SignUpForm extends CFormModel
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
 	 */
-	public function authenticate($attribute,$params)
+	public function save()
 	{
 		if(!$this->hasErrors())
 		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+			$tbl_user = new TblUser();
+			$tbl_user->username = $this->username;
+			$tbl_user->password = md5($this->password);
+			$tbl_user->site = $this->site;
+			$tbl_user->profile = $this->profile;
+			$tbl_user->save();
 		}
+		return null;
 	}
 
-	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
-	 */
-	public function login()
-	{
-		if($this->_identity===null)
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			$this->_identity->authenticate();
-		}
-		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
-		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
-			Yii::app()->user->login($this->_identity,$duration);
-			return true;
-		}
-		else
-			return false;
-	}
+	
 }

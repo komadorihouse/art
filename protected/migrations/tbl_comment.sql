@@ -1,5 +1,5 @@
 CREATE TABLE `tbl_comment` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(30) NOT NULL,
   `email` varchar(128) NOT NULL,
   `url` varchar(128) NOT NULL,

@@ -5,7 +5,7 @@ class SignUpForm extends CFormModel
 {
 	public $username;
 	public $password;
-	public $site;
+	public $sait;
 	public $email;
 	public $profile;
 	public $rememberMe;
@@ -34,27 +34,27 @@ class SignUpForm extends CFormModel
 			'username' => 'ユーザー名',
 			'password' => 'パスワード',
 			'email' => 'Eメールアドレス',
+			'sait' => 'URL',
 			'profile' => 'プロフィール',
 			'rememberMe'=>'次回からは自動的にログイン',
 		);
 	}
 
-	/**
-	 * Authenticates the password.
-	 * This is the 'authenticate' validator as declared in rules().
-	 */
-	public function save()
-	{
-		if(!$this->hasErrors())
-		{
+	public function save() {
+		
+		if ( !$this->hasErrors() ) {
+			
 			$tbl_user = new TblUser();
 			$tbl_user->username = $this->username;
 			$tbl_user->password = md5($this->password);
-			$tbl_user->site = $this->site;
+			$tbl_user->email = $this->email;
+			$tbl_user->sait = $this->sait;
 			$tbl_user->profile = $this->profile;
 			$tbl_user->save();
+
+			return $tbl_user;
 		}
-		return null;
+		return false;
 	}
 
 	

@@ -29,15 +29,15 @@ class TblUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, username, password, sait, email, profile', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
-			array('username', 'length', 'max'=>30),
-			array('password', 'length', 'max'=>12),
-			array('sait, email', 'length', 'max'=>128),
-			array('profile', 'length', 'max'=>200),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, sait, email, profile', 'safe', 'on'=>'search'),
+			//array('id, username, password, sait, email, profile', 'required'),
+			 array('id', 'numerical', 'integerOnly'=>true),
+			// array('username', 'length', 'max'=>30),
+			// array('password', 'length', 'max'=>40),
+			// array('sait, email', 'length', 'max'=>128),
+			// array('profile', 'length', 'max'=>200),
+			// // The following rule is used by search().
+			// // @todo Please remove those attributes that should not be searched.
+			// array('id, username, password, sait, email, profile', 'safe', 'on'=>'search'),
 		);
 	}
 

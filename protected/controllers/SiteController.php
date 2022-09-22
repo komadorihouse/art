@@ -108,8 +108,27 @@ class SiteController extends Controller
 		//使いたいフォームを呼び出して変数へ代入
 		$modelForm = new SignUpForm();
 
+		//POSTメソッドで受け取った配列データにSignUpFormというものがある場合
 		if(isset($_POST['SignUpForm'])){
-			
+
+			$modelForm->username = $_POST['SignUpForm']['username'];
+			$modelForm->password = $_POST['SignUpForm']['password'];
+			$modelForm->email = $_POST['SignUpForm']['email'];
+			$modelForm->sait = $_POST['SignUpForm']['sait'];
+			$modelForm->profile = $_POST['SignUpForm']['profile'];
+
+			if( $data = $modelForm->save()){
+
+				$model=new LoginForm;
+				$model->username = $data->username;
+				$model->password = $_POST['SignUpForm']['password'];
+				$model->rememberMe = $_POST['SignUpForm']['rememberMe'];
+				if($model->validate() && $model->login()){	
+					$this->redirect(Yii::app()->user->returnUrl);
+				}
+
+			}
+
 		}
 
 		//$this->renderはviewをよびだす。('viewファイル名',array('view内で使用する変数名' => $コントローラーから持っていく変数,))

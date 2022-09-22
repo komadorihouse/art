@@ -26,17 +26,15 @@ $this->breadcrumbs=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('style' => 'width: 22rem;')); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password',array('id'=>'password_field')); ?>
+		<i class="toggle-pass fa fa-eye-slash"></i>
 		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
 	</div>
 
 	<div class="row rememberMe">
@@ -54,3 +52,21 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+<script>
+
+$(function() {
+
+
+  $('#password_field').on('click', function() {
+    $(this).toggleClass('fa-eye fa-eye-slash');
+    var input = $(this).prev('input');
+    if (input.attr('type') == 'text') {
+      input.attr('type','password');
+    } else {
+      input.attr('type','text');
+    }
+  });
+
+
+});
+</script>

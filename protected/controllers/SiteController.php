@@ -120,7 +120,7 @@ class SiteController extends Controller
 			if( $data = $modelForm->save()){
 
 				$model=new LoginForm;
-				$model->username = $data->username;
+				$model->email = $data->email;
 				$model->password = $_POST['SignUpForm']['password'];
 				$model->rememberMe = $_POST['SignUpForm']['rememberMe'];
 				if($model->validate() && $model->login()){	

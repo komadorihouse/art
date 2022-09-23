@@ -2237,3 +2237,26 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/signingUp
 HTTP_REFERER=http://artists.local/index.php?r=site/signingUp
 ---
+2022/09/23 16:18:00 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'komadorihouse@yahoo.co.jp' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_user` `t` WHERE email = `komadorihouse@yahoo.co.jp`  LIMIT 1.
+in /Users/komadorihouse/yii/project/artists/protected/models/SignUpForm.php (51)
+in /Users/komadorihouse/yii/project/artists/protected/controllers/SiteController.php (120)
+in /Users/komadorihouse/yii/project/artists/index.php (13)
+2022/09/23 16:18:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'komadorihouse@yahoo.co.jp' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_user` `t` WHERE email = `komadorihouse@yahoo.co.jp`  LIMIT 1' in /Users/komadorihouse/yii/project/artists/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/komadorihouse/yii/project/artists/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/komadorihouse/yii/project/artists/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /Users/komadorihouse/yii/project/artists/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/komadorihouse/yii/project/artists/protected/models/SignUpForm.php(51): CActiveRecord->find(Array)
+#4 /Users/komadorihouse/yii/project/artists/protected/controllers/SiteController.php(120): SignUpForm->save()
+#5 /Users/komadorihouse/yii/project/artists/framework/web/actions/CInlineAction.php(49): SiteController->actionSigningUp()
+#6 /Users/komadorihouse/yii/project/artists/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Users/komadorihouse/yii/project/artists/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Users/komadorihouse/yii/project/artists/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Users/komadorihouse/yii/project/artists/framework/web/CWebApplication.php(282): CController->run('signingUp')
+#10 /Users/komadorihouse/yii/project/artists/framework/web/CWebApplication.php(141): CWebApplication->runController('site/signingUp')
+#11 /Users/komadorihouse/yii/project/artists/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/komadorihouse/yii/project/artists/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=site/signingUp
+HTTP_REFERER=http://artists.local/index.php?r=site/signingUp
+---

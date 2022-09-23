@@ -45,7 +45,7 @@ $this->breadcrumbs=array(
 
 	<div class="row buttons">
 		<button class='button span-2 login' type="submit">ログイン</button>
-		<a href='/index.php?r=site/signingUp'>
+		<a href='/?r=site/signingUp'>
 			<div class='button span-4 signin'>アカウントを作成</div>
 		</a>
 	</div>
